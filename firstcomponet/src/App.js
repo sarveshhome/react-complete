@@ -26,15 +26,11 @@ function App() {
   ];
   return (
     <div className="App">
-      <header className="App-header">          
           <h1 className="App-title">Flight Info</h1>
-        </header>
-        <p className="App-intro">
-          
            <FlightItem title={flightinfo[0].title} amount={flightinfo[0].amount} date={flightinfo[0].date}/>
            <FlightItem title={flightinfo[1].title} amount={flightinfo[1].amount} date={flightinfo[1].date}/>
            <FlightItem title={flightinfo[2].title} amount={flightinfo[2].amount} date={flightinfo[2].date}/>
-        </p>
+        
     </div>
   );
 }
