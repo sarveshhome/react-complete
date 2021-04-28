@@ -3,11 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 import {FlightItem} from './components/FlightItem';
 
-class App extends Component {
-
+// class App extends Component {
+  function App() {
    
 
-  render() {
+  // render() {
+    
 
    const flightinfo = [
       {
@@ -42,7 +43,7 @@ class App extends Component {
         </p>
       </div>
     );
-  }
+  //}
 }
 
 export default App;
