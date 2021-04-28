@@ -1,6 +1,6 @@
 function FlightItem(props){
     const month=  props.date.toISOString('en-US',{month:'long'});
-    const day= props.date.toLocalString('en-US',{day:'2-digit'});
+    const day= props.date.toLocaleString('en-GB', { timeZone: 'UTC' });
     const year= props.date.getFullYear();
 
     return (
@@ -21,4 +21,4 @@ function FlightItem(props){
     );
 }
 
-export default FlightItem;
+export { FlightItem};
