@@ -1,3 +1,4 @@
+import { React } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {FlightItem} from './components/FlightItem';
@@ -24,6 +25,14 @@ function App() {
       date: new Date(20212, 5, 12),
     },
   ];
+  
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h1',{},"Flight Info"),
+  //   React.createElement(FlightItem,{title:flightinfo[0].title,amount:flightinfo[0].amount,date:flightinfo[0].date})
+  // );
+
   return (
     <div className="App">
           <h1 className="App-title">Flight Info</h1>
