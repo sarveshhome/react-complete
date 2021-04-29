@@ -5,7 +5,19 @@ function FlightItem(props){
     const day= props.date.toLocaleString('en-US',{day:'2-digit'});
     const year= props.date.getFullYear();
 
-    return (
+    let title = props.title;
+    // function clickHandler(){
+    //     console.log('Click Me!');
+    // }
+
+    const clickHandler =() =>{
+        //console.log('Click Me!');
+        title ='update';
+        console.log('update');
+    }
+
+
+    return (        
         <div className='expense-item'>
             <div>
                 <div>{month}</div>
@@ -13,11 +25,11 @@ function FlightItem(props){
                 <div>{year}</div>
             </div>      
              <div className='expense-item__description'>
-                    <h2>{props.title}</h2>
+                    <h2>{title}</h2>
                     <div className='expense-item__price'>${props.amount}</div>
              </div>
-             <button onClick={()=>{console.log('ClickMe!')}}>Change Title</button>
-            
+             <button onClick={clickHandler} >Change Title</button>
+            {/* onClick={()=>{console.log('ClickMe!')}} */}
         </div>
     );
 }
