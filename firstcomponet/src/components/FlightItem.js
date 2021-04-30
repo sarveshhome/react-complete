@@ -1,19 +1,24 @@
+import React,{useState} from 'react';
 import './FlightItem.css';
 
 function FlightItem(props){
+
+   const [title,setTitle]=  useState(props.title);
+
     const month=  props.date.toLocaleString('en-US',{month:'long'});
     const day= props.date.toLocaleString('en-US',{day:'2-digit'});
     const year= props.date.getFullYear();
 
-    let title = props.title;
+    
     // function clickHandler(){
     //     console.log('Click Me!');
     // }
 
     const clickHandler =() =>{
         //console.log('Click Me!');
-        title ='update';
-        console.log('update');
+        //title ='update';
+        setTitle('updated');
+        console.log(title);
     }
 
 
