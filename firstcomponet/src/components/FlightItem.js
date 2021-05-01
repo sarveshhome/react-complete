@@ -3,7 +3,7 @@ import './FlightItem.css';
 
 function FlightItem(props){
 
-   const [title,setTitle]=  useState(props.title);
+    const [title,setTitle]=  useState(props.title);
 
     const month=  props.date.toLocaleString('en-US',{month:'long'});
     const day= props.date.toLocaleString('en-US',{day:'2-digit'});
@@ -14,12 +14,12 @@ function FlightItem(props){
     //     console.log('Click Me!');
     // }
 
-    const clickHandler =() =>{
+    const clickHandler = () =>{
         //console.log('Click Me!');
         //title ='update';
         setTitle('updated');
         console.log(title);
-    }
+    };
 
 
     return (        

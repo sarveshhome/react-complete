@@ -2,6 +2,7 @@ import { React } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {FlightItem} from './components/FlightItem';
+import {NewFlight} from './components/NewFlights/NewFlight';
 
 function App() {
   const flightinfo = [
@@ -36,10 +37,11 @@ function App() {
   return (
     <div className="App">
           <h1 className="App-title">Flight Info</h1>
+           <NewFlight/>
            <FlightItem title={flightinfo[0].title} amount={flightinfo[0].amount} date={flightinfo[0].date}/>
            <FlightItem title={flightinfo[1].title} amount={flightinfo[1].amount} date={flightinfo[1].date}/>
            <FlightItem title={flightinfo[2].title} amount={flightinfo[2].amount} date={flightinfo[2].date}/>
-        
+           
     </div>
   );
 }
