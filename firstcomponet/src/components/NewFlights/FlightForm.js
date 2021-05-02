@@ -61,9 +61,12 @@ const FlightForm = () => {
             title:enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
-        }
+        };
 
         console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     };
 
     return (
@@ -71,15 +74,15 @@ const FlightForm = () => {
             <div className="new-flight__controls">
                 <div className="new-flight__control">
                     <label>Title</label>
-                    <input type="text" onChange={titlechangeHandle}></input>
+                    <input type="text" value={enteredTitle} onChange={titlechangeHandle}></input>
                 </div>
                 <div className="new-flight__control">
                     <label>Amount</label>
-                    <input type="number" min="0.01" step="0.01" onChange={amountChangeHandler} ></input>
+                    <input type="number" min="0.01" step="0.01" value={enteredAmount} onChange={amountChangeHandler} ></input>
                 </div>
                 <div className="new-flight__control">
                     <label>Date</label>
-                    <input type="date" min="2019-01-01" max="2023-12-30" onChange={dateChangeHandler}></input>
+                    <input type="date" min="2019-01-01" max="2023-12-30" value={enteredDate} onChange={dateChangeHandler}></input>
                 </div>
             </div>
             <div className="new-flight__action">
