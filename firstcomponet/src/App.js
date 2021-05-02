@@ -34,10 +34,15 @@ function App() {
   //   React.createElement(FlightItem,{title:flightinfo[0].title,amount:flightinfo[0].amount,date:flightinfo[0].date})
   // );
 
+  const addFlightHandler =(flights)=>{
+     console.log('app.js');
+     console.log(flights);
+  };
+
   return (
     <div className="App">
           <h1 className="App-title">Flight Info</h1>
-           <NewFlight/>
+           <NewFlight onAddFlight={addFlightHandler} />
            <FlightItem title={flightinfo[0].title} amount={flightinfo[0].amount} date={flightinfo[0].date}/>
            <FlightItem title={flightinfo[1].title} amount={flightinfo[1].amount} date={flightinfo[1].date}/>
            <FlightItem title={flightinfo[2].title} amount={flightinfo[2].amount} date={flightinfo[2].date}/>
