@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 
 import './FlightForm.css';
-const FlightForm = () => {
+const FlightForm = (props) => {
     const [enteredTitle,setEnteredTitle]= useState('');
     const [enteredAmount,setEnteredAmount]=  useState('');
     const [enteredDate, setEnteredDate] = useState('');
@@ -57,13 +57,13 @@ const FlightForm = () => {
     const submitHandler =(event)=>{
         event.preventDefault();
 
-        const expenseData={
+        const flightsData={
             title:enteredTitle,
             amount: enteredAmount,
             date: new Date(enteredDate)
         };
-
-        console.log(expenseData);
+        props.onSaveFlightData(flightsData);
+        //console.log(flightsData);
         setEnteredTitle('');
         setEnteredAmount('');
         setEnteredDate('');
