@@ -1,12 +1,19 @@
 import React from 'react';
 import './FlightForm.css';
 const FlightForm = () => {
+
+    const titlechangeHandle = (event) =>{
+       // console.log('update');
+       console.log(event.target.value);
+
+    };
+
     return (
         <form>
             <div className="new-flight__controls">
                 <div className="new-flight__control">
                     <label>Title</label>
-                    <input type="text"></input>
+                    <input type="text" onChange={titlechangeHandle}></input>
                 </div>
                 <div className="new-flight__control">
                     <label>Amount</label>
