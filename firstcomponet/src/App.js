@@ -1,10 +1,13 @@
-import { React } from 'react';
+import { React, useState , useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {FlightItem} from './components/FlightItem';
 import {NewFlight} from './components/NewFlights/NewFlight';
+import { FlightFilter } from './components/FlightFilter';
 
-function App() {
+function App(props) {
+  console.log(props);
+  const[filteredYear,setFilteredYear] = useState('2020');
   const flightinfo = [
     {
       id: 'e1',
@@ -27,6 +30,7 @@ function App() {
     },
   ];
   
+  const[flightsdata,setFlightsdata]= useState(flightinfo);
   // return React.createElement(
   //   'div',
   //   {},
@@ -37,12 +41,29 @@ function App() {
   const addFlightHandler =(flights)=>{
      console.log('app.js');
      console.log(flights);
+     setFlightsdata((prevFlight) =>{
+       return [flights,...prevFlight];
+     })
   };
+
+  const filterChangeHandler = selectedYear =>{
+    setFilteredYear(selectedYear);
+  }
+  
 
   return (
     <div className="App">
           <h1 className="App-title">Flight Info</h1>
+
            <NewFlight onAddFlight={addFlightHandler} />
+           <FlightFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />          
+           {flightsdata.map((expense) => (
+          <FlightItem
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))}
            <FlightItem title={flightinfo[0].title} amount={flightinfo[0].amount} date={flightinfo[0].date}/>
            <FlightItem title={flightinfo[1].title} amount={flightinfo[1].amount} date={flightinfo[1].date}/>
            <FlightItem title={flightinfo[2].title} amount={flightinfo[2].amount} date={flightinfo[2].date}/>
