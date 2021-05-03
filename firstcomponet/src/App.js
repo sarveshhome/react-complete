@@ -1,9 +1,9 @@
 import { React, useState , useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {FlightItem} from './components/FlightItem';
+import {FlightItem} from './components/Flight/FlightItem';
 import {NewFlight} from './components/NewFlights/NewFlight';
-import { FlightFilter } from './components/FlightFilter';
+import { FlightFilter } from './components/Flight/FlightFilter';
 
 function App(props) {
   console.log(props);
