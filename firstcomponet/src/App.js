@@ -56,8 +56,10 @@ function App(props) {
           <h1 className="App-title">Flight Info</h1>
 
            <NewFlight onAddFlight={addFlightHandler} />
-           <FlightFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />          
-           {flightsdata.map((expense) => (
+           <FlightFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />  
+           {flightsdata.length===0?(<p>No expenses found</p>)
+          :
+           flightsdata.map((expense) => (
           <FlightItem
             title={expense.title}
             amount={expense.amount}
