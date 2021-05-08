@@ -18,4 +18,4 @@ const FlightFilter = () => {
         );
 }
 
-export {FlightFilter};
+export default FlightFilter;

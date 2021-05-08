@@ -15,7 +15,7 @@ const Flight = (props)=> {
   
     return (
       <div>
-        <FlightCard className='expenses'>
+        <FlightCard className='flight'>
           <FlightFilter
             selected={filteredYear}
             onChangeFilter={filterChangeHandler}
