@@ -3,14 +3,9 @@ import './FlightFilter.css';
 
 const FlightFilter = (props) => {
 
-  const dropdownChangeHandler = (event) => {
-    console.log(event);
-    console.log('flight filter');
-    console.log(event.target.value);
-    props.onChangeFilter(event.target.value);
+  const dropdownChangeHandler = (event) => {     
+     props.onChangeFilter(event.target.value);
   };
-
-
         return (
             <div className='flight-filter'>
             <div className='flight-filter__control'>

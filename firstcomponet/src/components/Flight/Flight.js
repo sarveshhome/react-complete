@@ -3,6 +3,7 @@ import React ,{useState} from 'react';
 import FlightItem from './FlightItem';
 import FlightCard from '../UI/FlightCard';
 import FlightFilter from './FlightFilter';
+import FlightList from './FlightList';
 import './Flight.css';
 
 const Flight = (props)=> {
@@ -12,8 +13,9 @@ const Flight = (props)=> {
     const filterChangeHandler = (selectedYear) => {
       setFilteredYear(selectedYear);
     };
-
-    
+    const filteredFlight = props.items.filter((flight) => {
+      return flight.date.getFullYear().toString() === filteredYear;
+    });    
   
     return (
       <div>
@@ -22,14 +24,7 @@ const Flight = (props)=> {
             selected={filteredYear}
             onChangeFilter={filterChangeHandler}
           />
-          {props.items.map((flight) => (
-            <FlightItem
-              key={flight.id}
-              title={flight.title}
-              amount={flight.amount}
-              date={flight.date}
-            />
-          ))}
+         <FlightList items={filteredFlight} />
         </FlightCard>
       </div>
     );
