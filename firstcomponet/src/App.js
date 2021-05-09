@@ -57,7 +57,7 @@ function App(props) {
 
   return (
     <div>
-      <NewFlight onAddExpense={addFlightHandler} />
+      <NewFlight onAddFlight={addFlightHandler} />
       <Flight items={flightsdata} />
     </div>
   );

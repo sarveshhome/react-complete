@@ -6,9 +6,7 @@ import FlightFilter from './FlightFilter';
 import './Flight.css';
 
 const Flight = (props)=> {
-
-    console.log(props);
-    console.log('flight.js page');
+    
     const [filteredYear, setFilteredYear] = useState('2020');
 
     const filterChangeHandler = (selectedYear) => {

@@ -73,7 +73,7 @@ const FlightForm = (props) => {
         <form onSubmit={submitHandler}>
             <div className="new-flight__controls">
                 <div className="new-flight__control">
-                    <label>Title</label>
+                    <label>Add Flight Name</label>
                     <input type="text" value={enteredTitle} onChange={titlechangeHandle}></input>
                 </div>
                 <div className="new-flight__control">
@@ -86,7 +86,7 @@ const FlightForm = (props) => {
                 </div>
             </div>
             <div className="new-flight__action">
-                <button type="submit">Add Expense</button>
+                <button type="submit">Add Flight</button>
             </div>
         </form>
     );

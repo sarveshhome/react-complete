@@ -1,13 +1,21 @@
 import React from 'react';
-
 import './FlightFilter.css';
 
-const FlightFilter = () => {
+const FlightFilter = (props) => {
+
+  const dropdownChangeHandler = (event) => {
+    console.log(event);
+    console.log('flight filter');
+    console.log(event.target.value);
+    props.onChangeFilter(event.target.value);
+  };
+
+
         return (
             <div className='flight-filter'>
             <div className='flight-filter__control'>
-              <label>Flight Filter by year</label>
-              <select>
+              <label >Flight Filter by year</label>
+              <select value={props.selected} onChange={dropdownChangeHandler}>
                 <option value='2022'>2022</option>
                 <option value='2021'>2021</option>
                 <option value='2020'>2020</option>
@@ -16,6 +24,6 @@ const FlightFilter = () => {
             </div>
           </div>
         );
-}
+};
 
 export default FlightFilter;
