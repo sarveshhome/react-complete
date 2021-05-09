@@ -1,0 +1,9 @@
+.Flight-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .Flight-list__fallback {
+    color: white;
+    text-align: center;
+  }

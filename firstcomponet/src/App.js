@@ -1,4 +1,4 @@
-import { React, useState , useEffect } from 'react';
+import { React, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -24,12 +24,12 @@ const DUMMY_FLIGHT = [
     id: 'e4',
     title: 'EY',
     amount: 450,
-    date: new Date(20212, 5, 12),
+    date: new Date(2021, 5, 12),
   },
 ];
 
 function App(props) {
-  console.log(props);
+  
   //const[filteredYear,setFilteredYear] = useState('2020');
   
   
@@ -42,9 +42,7 @@ function App(props) {
   // );
 
  
-  const addFlightHandler =(flights)=>{
-     console.log('app.js');
-     console.log(flights);
+  const addFlightHandler =(flights)=>{     
      setFlightsdata((prevFlight) =>{
        return [flights,...prevFlight];
      })
