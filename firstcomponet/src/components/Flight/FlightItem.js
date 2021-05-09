@@ -36,4 +36,4 @@ function FlightItem(props){
     );
 }
 
-export { FlightItem};
+export default FlightItem;

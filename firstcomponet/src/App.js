@@ -1,36 +1,39 @@
 import { React, useState , useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {FlightItem} from './components/Flight/FlightItem';
+
 import {NewFlight} from './components/NewFlights/NewFlight';
-import { FlightFilter } from './components/Flight/FlightFilter';
+import Flight from './components/Flight/Flight';
+
+
+const DUMMY_FLIGHT = [
+  {
+    id: 'e1',
+    title: 'BA ',
+    amount: 250.45,
+    date: new Date(2022, 7, 14),
+  },
+  { id: 'e2', title: 'AI', amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: 'e3',
+    title: 'EK',
+    amount: 294.67,
+    date: new Date(2022, 2, 28),
+  },
+  {
+    id: 'e4',
+    title: 'EY',
+    amount: 450,
+    date: new Date(20212, 5, 12),
+  },
+];
 
 function App(props) {
   console.log(props);
-  const[filteredYear,setFilteredYear] = useState('2020');
-  const flightinfo = [
-    {
-      id: 'e1',
-      title: 'BA ',
-      amount: 250.45,
-      date: new Date(2022, 7, 14),
-    },
-    { id: 'e2', title: 'AI', amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: 'e3',
-      title: 'EK',
-      amount: 294.67,
-      date: new Date(2022, 2, 28),
-    },
-    {
-      id: 'e4',
-      title: 'EY',
-      amount: 450,
-      date: new Date(20212, 5, 12),
-    },
-  ];
+  //const[filteredYear,setFilteredYear] = useState('2020');
   
-  const[flightsdata,setFlightsdata]= useState(flightinfo);
+  
+  const[flightsdata,setFlightsdata]= useState(DUMMY_FLIGHT);
   // return React.createElement(
   //   'div',
   //   {},
@@ -38,6 +41,7 @@ function App(props) {
   //   React.createElement(FlightItem,{title:flightinfo[0].title,amount:flightinfo[0].amount,date:flightinfo[0].date})
   // );
 
+ 
   const addFlightHandler =(flights)=>{
      console.log('app.js');
      console.log(flights);
@@ -47,29 +51,14 @@ function App(props) {
   };
 
   const filterChangeHandler = selectedYear =>{
-    setFilteredYear(selectedYear);
+    setFlightsdata(selectedYear);
   }
   
 
   return (
-    <div className="App">
-          <h1 className="App-title">Flight Info</h1>
-
-           <NewFlight onAddFlight={addFlightHandler} />
-           <FlightFilter selected={filteredYear} onChangeFilter={filterChangeHandler} /> 
-           {flightsdata.length===0 && (<p>No expenses found</p>)} 
-           {flightsdata.length> 0 &&
-           flightsdata.map((expense) => (
-          <FlightItem
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
-           <FlightItem title={flightinfo[0].title} amount={flightinfo[0].amount} date={flightinfo[0].date}/>
-           <FlightItem title={flightinfo[1].title} amount={flightinfo[1].amount} date={flightinfo[1].date}/>
-           <FlightItem title={flightinfo[2].title} amount={flightinfo[2].amount} date={flightinfo[2].date}/>
-           
+    <div>
+      <NewFlight onAddFlight={addFlightHandler} />
+      <Flight items={flightsdata} />
     </div>
   );
 }
