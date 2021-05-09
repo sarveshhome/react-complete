@@ -30,7 +30,7 @@ const DUMMY_FLIGHT = [
 
 function App(props) {
   console.log(props);
-  const[filteredYear,setFilteredYear] = useState('2020');
+  //const[filteredYear,setFilteredYear] = useState('2020');
   
   
   const[flightsdata,setFlightsdata]= useState(DUMMY_FLIGHT);
@@ -51,14 +51,14 @@ function App(props) {
   };
 
   const filterChangeHandler = selectedYear =>{
-    setFilteredYear(selectedYear);
+    setFlightsdata(selectedYear);
   }
   
 
   return (
     <div>
       <NewFlight onAddExpense={addFlightHandler} />
-      <Flight items={filteredYear} />
+      <Flight items={flightsdata} />
     </div>
   );
 }
