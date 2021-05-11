@@ -7,6 +7,15 @@ https://styled-components.com/
 `npm install --save styled-components`
 
 
+
+-------------------------------------------------
+
+CSS Modules
+
+https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
