@@ -13,7 +13,7 @@ const App = () => {
   const addGoalHandler = enteredText => {
     setSubjectGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
+      updatedGoals.unshift({ text: enteredText, id: 'goal2' });
       return updatedGoals;
     });
   };
@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div>
       <section id="goal-form">
-        <SubjectInput onAddGoal={addGoalsHandler} />
+        <SubjectInput onAddGoal={addGoalHandler} />
       </section>
       <section id="goals">
         {content}
