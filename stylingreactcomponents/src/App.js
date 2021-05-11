@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div>
       <section id="goal-form">
-        <SubjectInput onAddGoal={addGoalHandler} />
+        <SubjectInput onAddGoal={addGoalsHandler} />
       </section>
       <section id="goals">
         {content}
