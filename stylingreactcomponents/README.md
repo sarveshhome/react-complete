@@ -16,6 +16,17 @@ https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
 
 
 
+-----------------------------------
+
+React devtools
+
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+
+----------------------------------------------------
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

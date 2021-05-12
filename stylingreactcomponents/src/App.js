@@ -13,7 +13,7 @@ const App = () => {
   const addGoalHandler = enteredText => {
     setSubjectGoals(prevGoals => {
       const updatedGoals = [...prevGoals];
-      updatedGoals.unshift({ text: enteredText, id: 'goal2' });
+      updatedGoals.unshift({ text: enteredText, id: Math.random().toString() });
       return updatedGoals;
     });
   };
